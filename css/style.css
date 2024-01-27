@@ -1,0 +1,368 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+/* fonts import */
+
+@font-face {
+    font-family: "Avenir Bold";
+    src: url("../fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Avenir Italic";
+    src: url("../fonts/AvenirNextLTPro-It.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Avenir Regular";
+    src: url("../fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+}
+
+@import url("../fonts/octin_sports_rg.ttf");
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #191919;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 6rem;
+  font-family: 'Avenir Bold';
+}
+h2 {
+  font-size: 3rem;
+  font-family: 'Avenir Bold';
+}
+h3 {
+  font-size: 2rem;
+  font-family: 'Avenir Bold';
+  padding-top: 20px;
+}
+h4 {
+  font-size: 1rem;
+  font-family: 'Avenir Bold';
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-family: 'Avenir Bold';
+  padding-top: 8px;
+  padding-right: 10px;
+}
+
+/* White navigation section */
+
+/* Header and Navigation */
+.header_section {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+.header_section .container-fluid {
+  padding-right: 20px; /* Adjust the padding for responsiveness */
+  padding-left: 20px; /* Adjust the padding for responsiveness */
+}
+
+.header_section.innerpage_header {
+  position: relative;
+  padding: 20px 0; /* Adjust the padding for responsiveness */
+}
+
+.custom_nav-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar-toggler-icon {
+  background-image: url("../images/menuburguer.png");
+}
+
+/* Style for the collapsed menu items */
+.navbar-nav .nav-item {
+  padding: 10px;
+}
+
+.topnav-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Add space between the toggle button and the links */
+  width: 45%; /* Adjust the width for responsiveness */
+}
+
+.topnav-right {
+  float: right;
+  text-align: right;
+  width: 48%;
+}
+
+/* Style for the collapsed menu items */
+
+.navbar-nav .nav-item {
+  padding: 10px;
+}
+
+
+
+  .topnav-right {
+    float: right;
+    text-align: right;
+    width: 48%;
+  }
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 767px) {
+  .navbar-toggler {
+    order: -1; /* Move the burger menu to the left */
+  }
+
+  .navbar-collapse {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align the menu to the left */
+    width: 100%;
+    margin-top: 10px; /* Add margin at the top for responsiveness */
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("../images/menuburguer.png");
+    margin-right: 10px; /* Adjust the margin for responsiveness */
+  }
+
+  .navbar-nav {
+    text-align: left;
+    flex: 1;
+  }
+
+  .navbar-nav .nav-item {
+    padding: 10px;
+  }
+
+  a,
+  a:hover,
+  a:focus {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+    text-align: left;
+  }
+}
+
+/* Navigation buttons/links */
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: #191919;
+  padding-left: 10px; /* Adjust the padding for responsiveness */
+  padding-right: 10px; /* Adjust the padding for responsiveness */
+}
+
+a:hover,
+a:focus {
+  font-weight: 700;
+  color: #FAAF3A;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+
+/* para mexer em containers de texto e assins, utilizar bootstrap*/
+
+/* footer section*/
+.footer_section {
+  position: relative;
+  text-align: center;
+  padding-top: 10%;
+}
+
+.footer_section p {
+  color: #000000;
+  padding: 25px 0;
+  margin: 0;
+}
+
+.footer_section p a {
+  color: inherit;
+}
+/*# sourceMappingURL=style.css.map */
+
+/*Sectçaõ de filtragem de conteúdo para o portfolio */
+
+.filterDiv {
+  float: left;
+  width: 32%; /* ta 32% por 33% da bug */
+  max-width: 100%;
+  background-color: #Ffffff;
+  color: #1f1f1f;
+  text-align: center;
+  margin: 2px;
+  margin-top: 20px;
+  display: none;
+}
+
+/* Responsive design for smaller screens (e.g., mobile) */
+@media (max-width: 768px) {
+  .filterDiv {
+    width: 100%;
+  }
+  .header_section {
+    width: 100%;
+  }
+}
+
+.show {
+  display:block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.container50 {
+  margin: 2%;
+  overflow: hidden;
+  width: 30%;
+  justify-items: right;
+  box-sizing: content-box; /* Include padding and borders in the width */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.container51 {
+  margin-top: 5%;
+  overflow: hidden;
+  width: 45%;
+  padding-right: 4%;
+
+  box-sizing: border-box; /* Include padding and borders in the width */
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+}
+.container10 {
+  margin: 1%;
+  overflow: visible;
+  width: 29%;
+  height: 50%;
+  scale: 70%;
+  max-width: fit-content;
+  box-sizing: border-box; /* Include padding and borders in the width */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.container100 {
+  margin: 0%;
+  overflow: hidden;
+  width: 90%;
+  box-sizing: border-box; /* Include padding and borders in the width */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.container40 {
+  margin: 5%;
+  overflow: hidden;
+  width: 45%;
+  box-sizing: border-box; /* Include padding and borders in the width */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.table-container {
+  width: 80%;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box; /* Include padding and borders in the width */
+  margin-top: 20px;
+}
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 8px 25px;
+  margin-right: 10px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.btn:hover {
+  background-color: #FAAF3A;
+}
+
+.btn.active {
+  background-color: #FAAF3A;
+  color: white;
+}
+
+.btnporfolio {
+  background-image: url("../images/right-arrow-icon-9.png");
+  background-size: contain; /* or cover, or a specific size */
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 16%;
+  padding: 8px 25px;
+  margin-right: 10px;
+  background-color: #ffffff;
+  cursor: pointer;
+  height: auto;
+  width: 100%;
+  font-size: 2rem;
+  font-family: 'Avenir Bold';
+  text-align: left;
+  transition: background-size 0.3s ease; /* Add transition property */
+}
+
+.btnporfolio:hover{
+ background-size: 18%;
+}
+
+.backporfolio {
+  background-image: url("../images/left-arrow-icon-9.png");
+  background-size: contain; /* or cover, or a specific size */
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 15%;
+  border-radius: 30px;
+  border: 2px solid black;
+  padding: 10px 25px;
+  background-color: #ffffff;
+  cursor: pointer;
+  height: 100%;
+  width: 20%;
+  font-size: 1rem;
+  transition: background-size 0.3s ease; /* Add transition property */
+  
+}
+
+.backporfolio:hover{
+ background-size: 18%;
+ font-size: 1.05rem;
+}
+

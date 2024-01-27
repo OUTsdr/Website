@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html style="background-color: #191919;">
+
+  <!-- Site Metas -->
+  <link rel="icon" href="images/favicon.png" type="image/gif" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- icons -->
+  <script src="https://kit.fontawesome.com/50513b31b1.js" crossorigin="anonymous"></script>
+
+<head>
+	<title>OUTsdr</title>
+
+	<!-- start navigation bar -->
+  <header class="header_section innerpage_header">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg .custom_nav-container" style="display: flex; justify-content: space-between;">
+        <div class="topnav-left">
+              <a href="index.html">Lobby</a>
+               <a href="AboutOUTsdr.html">What is an OUTsdr</a>
+               <a href="Whoarewe.html">Who we are</a>
+               <a href="Portfolio.html" style="font-weight: 700;color: #FAAF3A;-webkit-transition: 0.3s;transition: 0.3s;">Portfolio</a> <!-- Ligação desta página -->
+        </div>
+        <div class="topnav-right">  
+           <a href="index.html"><img src="./images/logo.png" style="max-width: 128px;"></a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- end navigation bar -->
+
+</head>
+<body>
+
+<div class="container">
+  <h5>Filter:</h5>
+
+  <div id="myBtnContainer">
+    <button class="btn active" onclick="filterSelection('Our picks')"> Our picks</button>
+    <button class="btn" onclick="filterSelection('Visual Identity')"> Visual Identity</button>
+    <button class="btn" onclick="filterSelection('Branding')"> Branding</button>
+    <button class="btn" onclick="filterSelection('UI/UX Design')"> UI/UX Design</button>
+    <button class="btn" onclick="filterSelection('all')"> Show all</button>
+  </div>
+
+  <div id="portfolioCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <!-- Filtered items will be displayed here -->
+    </div>
+    <a class="carousel-control-prev" href="#portfolioCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#portfolioCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <div class="container">
+    <!-- Your portfolio items here -->
+    <div class="filterDiv OurPicks UI/UX Design">Minimalist To-do list app</div>
+    <div class="filterDiv OurPicks VisualIdentity Branding">Our Biggest Project yet.</div>
+    <div class="filterDiv VisualIdentity Branding">Exemplo 1</div>
+    <div class="filterDiv UI/UX Design">Exemplo 2</div>
+    <div class="filterDiv VisualIdentity UI/UX Design">Exemplo 3</div>
+    <div class="filterDiv VisualIdentity">Exemplo 4</div>
+  </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    filterSelection("Our picks");
+  });
+
+  function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("filterDiv");
+    if (c == "all") c = "";
+    
+    var carouselInner = document.querySelector(".carousel-inner");
+    carouselInner.innerHTML = ""; // Clear previous items in the carousel
+
+    for (i = 0; i < x.length; i++) {
+      w3RemoveClass(x[i], "show");
+      if (x[i].className.indexOf(c) > -1) {
+        w3AddClass(x[i], "show");
+
+        // Create a carousel item and add the filtered content
+        var carouselItem = document.createElement("div");
+        carouselItem.className = "carousel-item";
+        if (carouselInner.children.length === 0) {
+          carouselItem.classList.add("active"); // Make the first item active
+        }
+        carouselItem.appendChild(x[i].cloneNode(true));
+        carouselInner.appendChild(carouselItem);
+      }
+    }
+  }
+
+  function w3AddClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      if (arr1.indexOf(arr2[i]) == -1) {
+        element.className += " " + arr2[i];
+      }
+    }
+  }
+
+  function w3RemoveClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      while (arr1.indexOf(arr2[i]) > -1) {
+        arr1.splice(arr1.indexOf(arr2[i]), 1);
+      }
+    }
+    element.className = arr1.join(" ");
+  }
+</script>
+</body>
+
+
+<!-- footer -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+      </p>
+    </div>
+  </footer>
+
+  
+  <!-- footer -->
+
+</html>

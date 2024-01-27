@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+  <!-- Site Metas -->
+  <link rel="icon" href="images/favicon.png" type="image/gif" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- Custom styles for this template -->
+  <link href="css/style_lobby.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- icons -->
+  <script src="https://kit.fontawesome.com/50513b31b1.js" crossorigin="anonymous"></script>
+
+<head>
+	<title>OUTsdr</title>
+
+  <div class="slider"> <!-- ** Começo do slider (OCUPA A PÁGINA TODA) com as imagnes dos designers -->
+
+
+	<!-- start navigation bar -->
+<header class="header_section innerpage_header">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg custom_nav-container">
+      
+    <div class="topnav-left">
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span><!-- botao burguuer -->
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- links em lista -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Lobby</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="AboutOUTsdr.html">What is an OUTsdr</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Whoarewe.html" style="font-weight: 700;color: #FAAF3A;-webkit-transition: 0.3s;transition: 0.3s;">Who we are</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Portfolio.html">Portfolio</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+      <div class="topnav-right">
+        <a href="index.html">
+          <img class="logo" src="./images/logo.png" style="max-width: 128px;">
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- end navigation bar -->
+
+
+</head>
+<body>
+  <!-- CONTINUAÇÃO do slider que ocupa a página toda com as imagens dos designers -->
+  <div class="slider">
+    <div class="slide">
+      <h1 style="color:#ffb700; text-align: center; padding-top: 10%;">Luis Felipe Nunes</h1>
+      <!-- Add content for Luis here -->
+    </div>
+    <div class="slide">
+      <h1 style="color:#d776c3; text-align: center; padding-top: 10%;">LAMB</h1>
+      <!-- Add content for Daniela here -->
+    </div>
+  </div>
+</body>
+<!-- Fim do slider mesmo antes do footer -->
+
+<!-- Style para montar o caroussel -->
+<style> 
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      transition: background 3s ease;
+      background-image: url('images/Luis.jpg'); 
+    }
+
+    /* Add more background images as needed */
+    body.bg1 {
+      background-image: url('images/Daniela.jpg');
+    }
+
+  </style>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    setInterval(changeBackground, 5000); // Change background every 5 seconds
+
+    function changeBackground() {
+      var bodyElement = document.body;
+      var currentClass = bodyElement.className;
+      var nextClass;
+
+      switch (currentClass) {
+        case 'bg1':
+          nextClass = 'bg2';
+          break;
+        case 'bg2':
+          nextClass = 'bg1';
+          break;
+        case 'bg3':
+          nextClass = 'default';
+          break;
+        default:
+          nextClass = 'bg1';
+          break;
+      }
+
+      bodyElement.className = nextClass;
+    }
+  });
+</script>
+
+<!-- footer -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        <a href="https://www.instagram.com/out.sdrs/"><i class="fa-brands fa-instagram" style="color: white; padding: 10px;"></i></a>
+    <a href="link aqui"><i class="fa-brands fa-behance" style="color: white; padding: 10px;"></i></a>
+    <a href="link aqui"><i class="fa-brands fa-linkedin" style="color: white; padding: 10px;"></i></a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer -->
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+  <!-- Site Metas -->
+  <link rel="icon" href="images/favicon.png" type="image/gif" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- icons -->
+  <script src="https://kit.fontawesome.com/50513b31b1.js" crossorigin="anonymous"></script>
+
+<head>
+	<title>OUTsdr</title>
+
+	<!-- start navigation bar -->
+<header class="header_section innerpage_header">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg custom_nav-container">
+      
+    <div class="topnav-left">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span><!-- botao burguuer -->
+      </button>
+      
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- links em lista -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Lobby</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="AboutOUTsdr.html">What is an OUTsdr</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Whoarewe.html">Who we are</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Portfolio.html" style="font-weight: 700;color: #FAAF3A;-webkit-transition: 0.3s;transition: 0.3s;">Portfolio</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+
+      <div class="topnav-right">
+        <a href="index.html">
+          <img class="logo" src="./images/logo.png" style="max-width: 128px;">
+        </a>
+      </div>
+      
+    </nav>
+  </div>
+</header>
+<!-- end navigation bar -->
+
+</head>
+<body>
+
+<div class="container"><h5>Filter:</h5> <!-- Lista para filtrar - parte HTML -->
+
+  <div id="myBtnContainer">
+    <button class="btn active" onclick="filterSelection('OurPicks')"> Our picks</button>
+    <button class="btn" onclick="filterSelection('VisualIdentity')"> Visual Identity</button>
+    <button class="btn" onclick="filterSelection('Campaigns')"> Campaigns</button>
+    <button class="btn" onclick="filterSelection('UI/UX Design')"> UI/UX Design</button>
+    <button class="btn" onclick="filterSelection('Experimental')"> Experimental</button>
+    <button class="btn" onclick="filterSelection('all')"> Show all</button>
+  </div>
+
+  <div class="container"> <!-- lista de trabalhos -->
+    <div class="filterDiv OurPicks UI/UX Design Experimental">
+      <img src="images/Portfolio/Banners/Minimal.png" style="width: 100%;">
+      <button class="btnporfolio" onclick="redirectToPage('Portfolio - Minimalist.html')">Minimalist <br>To-do list app</button>
+    </div>
+    <div class="filterDiv OurPicks VisualIdentity Branding Campaigns">
+      <img src="images/Portfolio/Banners/ipst.png" style="width: 100%;">
+      <button class="btnporfolio" onclick="redirectToPage('Portfolio - IPST.html')">Fuel For<br>Dreams - IPST</button>
+    </div>
+    <div class="filterDiv OurPicks VisualIdentity">
+      <img src="images/Portfolio/Banners/onis.png" style="width: 100%;">
+      <button class="btnporfolio" onclick="redirectToPage('Portfolio - ONIS.html')">Bolsa Social <br>ONIS</button>
+    </div>
+    <div class="filterDiv VisualIdentity">
+      <img src="images/Portfolio/Banners/Alges.png" style="width: 100%;">
+      <button class="btnporfolio" onclick="redirectToPage('Portfolio - ALGES.html')">Visually Speaking<br>Alges</button>
+    </div>
+    <div class="filterDiv VisualIdentity">
+      <img src="images/Portfolio/Banners/TERRAVIVA.png" style="width: 100%;">
+      <button class="btnporfolio" onclick="redirectToPage('Portfolio - TERRA.html')">Terra Viva<br>Competitions</button>
+    </div>
+    <div class="filterDiv Experimental">
+      <img src="images/Portfolio/Banners/Amoras1.png" style="width: 100%;">
+      <button class="btnporfolio" onclick="redirectToPage('Portfolio - TERRA.html')">As Amoras<br>Visual Poem</button>
+    </div>
+    </div>
+  </div>
+</div>
+<!-- Lista para filtrar - SCRIPT -->
+<script> 
+document.addEventListener("DOMContentLoaded", function() {
+  filterSelection("OurPicks");
+});
+
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+// Esta script é só para tornar possivel ligar links a alguns botões especificos)
+function redirectToPage(pageUrl) {
+    window.location.href = pageUrl;
+  }
+</script>
+
+</body>
+
+
+<!-- footer -->
+  <footer class="footer_section">
+    <div class="containernoflex">
+      <p>
+        <a href="https://www.instagram.com/out.sdrs/"><i class="fa-brands fa-instagram" style="color: grey; padding: 10px;"></i></a>
+         <a href="link aqui"><i class="fa-brands fa-behance" style="color: grey; padding: 10px;"></i></a>
+          <a href="link aqui"><i class="fa-brands fa-linkedin" style="color: grey; padding: 10px;"></i></a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer -->
+
+
+  <!-- footer -->
+
+</html>
